@@ -15,9 +15,9 @@
             <div class='posts'>
                 @foreach ($posts as $post)
                     <div class='post'>
-                        <h2 class='title'>{{ $post->title }}</h2>
                         <p class='body'>{{ $post->body }}</p>
                     </div>
+                    <small>{{ $post->user->name }}</small>
                 @endforeach  
             </div>
             {{ Auth::user()->name }}

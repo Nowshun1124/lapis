@@ -17,7 +17,10 @@
                     </x-nav-link>
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                         {{ __('Home') }}
-                    </x-nav-link>    
+                    </x-nav-link>
+                     <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
+                        {{ __('createReport') }}
+                    </x-nav-link> 
                 </div>
             </div>
 
