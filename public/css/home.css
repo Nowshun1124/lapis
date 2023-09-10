@@ -1,0 +1,25 @@
+
+
+#user_icon {
+    width:  50px;       /* ※縦横を同値に */
+    height: 50px;       /* ※縦横を同値に */
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    background-position: center center;  
+    display: inline-block;          /* 複数の画像を横に並べたい場合 */
+}
+
+.homebody {
+    padding-left: 250px;
+}
+
+.post-content {
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+.post-content p {
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+}
+

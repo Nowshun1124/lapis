@@ -22,6 +22,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_photo_path',
+        'introduction',
+        'account_type'
     ];
 
     /**
@@ -47,6 +50,16 @@ class User extends Authenticatable
     public function posts()   
     {
         return $this->hasMany(Post::class);  
+    }
+    
+    public function commnets()
+    {
+        return $this->hasMany(Comment::class);
+    }
+    
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
     }
     
     public function getOwnPaginateByLimit(int $limit_count = 5)

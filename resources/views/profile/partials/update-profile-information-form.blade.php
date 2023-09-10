@@ -13,18 +13,23 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
+        
+        <div>
+            <x-picture-input />
+            <x-input-error class="mt-2" :messages="$errors->get('picture')" />
+        </div>
 
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" :value="__('名前')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
         <div>
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label for="email" :value="__('メール')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
@@ -46,7 +51,13 @@
                 </div>
             @endif
         </div>
-
+        
+        <div>
+            <x-input-label for="introduction" :value="__('自己紹介')" />
+            <x-text-input id="introduction" name="introduction" type="text" class="mt-1 block w-full" :value="old('introduction', $user->introduction)"/>
+            <x-input-error class="mt-2" :messages="$errors->get('introduction')" />
+        </div>
+        
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
@@ -61,4 +72,17 @@
             @endif
         </div>
     </form>
+    
+    <form action="{{ route('account_type.select') }}" method="POST">
+        @csrf
+        <div class="flex items-center gap-4">
+            <input type="hidden" name="user_id" value="false">
+            @if ($user['account_type'] === 1 )
+                <p style="line-height:70px;">アーティストアカウントとして登録：<input id="account_type" checked="checked" name="user_id" type="checkbox" value="old('account_type', $user->account_type)"/></p>
+                @else
+                <p style="line-height:70px;">アーティストアカウントとして登録：<input id="account_type" name="user_id" type="checkbox" value="old('account_type', $user->account_type)"/></p>
+            @endif
+            <x-primary-button>{{ __('適用') }}</x-primary-button>
+        </div>　　
+    </form> 
 </section>
