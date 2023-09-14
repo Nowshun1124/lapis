@@ -6,14 +6,15 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Like;
+use App\Models\Follow;
 use App\Http\Requests\PostRequest;
 use Auth;
 
 
 class PostController extends Controller
 {
-    public function index(Post $post){
-        return view('posts/index')->with(['posts' => $post->getByLimit()]);
+    public function index(Post $post, Follow $follow){
+        return view('posts/index')->with(['posts' => $post->getByLimit(), 'follows' => $follow]);
     }
     
     public function create()
