@@ -1,0 +1,11 @@
+.body {
+    padding-left: 250px;
+}
+
+#user_icon {
+    width:  150px;       /* ※縦横を同値に */
+    height: 150px;       /* ※縦横を同値に */
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    background-position: center center;  
+    display: inline-block;          /* 複数の画像を横に並べたい場合 */
+}

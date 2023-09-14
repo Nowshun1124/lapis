@@ -11,17 +11,22 @@
                     <a>Top Picks</a>
                 </li>
                 <li>
-                    <a>donation</a>
+                    <a href='/donations'>donation</a>
                 </li>
             </li>    
         </ul>
     </div>
-    <div class="followlist">
-        <header class="followlist-header">
-            <a>フォロー中</a>
-        </header>
-        <ul>
+    
+        <div class="followlist">
+            <header class="followlist-header">
+                <a>フォロー中</a>
+                <li>
+                    <a></a>
+                </li>
+            </header>
+            <ul>
             
-        </ul>
-    </div>
+            </ul>
+        </div>
+
 </div>

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\User;
+use App\Models\Post;
+use App\Models\Follow;
 
 class ProfileController extends Controller
 {
@@ -22,9 +24,9 @@ class ProfileController extends Controller
         ]);
     }
     
-    public function show(User $user)
+    public function show(User $user, Post $post)
     {
-        return view('profile/show')->with(['users' => $user]);
+        return view('profile/show')->with(['user' => $user, 'post' => $post]);
     }
     /**
      * Update the user's profile information.

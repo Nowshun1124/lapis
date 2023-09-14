@@ -21,7 +21,7 @@
                     @foreach ($posts as $post)
                         <div class="post-header">
                             <div class='user-info'>
-                                <a href="/profile/shows">
+                                <a href="/profile/shows/{{ $post->user->id }}">
                                     <img id="user_icon" src="{{ asset('storage/'.($post->user->profile_photo_path ?? 'user_icon.jpg')) }}" alt="">
                                 </a>
                             <a href="/posts/{{ $post->id }}">{{ $post->user->name }}</a>
@@ -51,7 +51,7 @@
                                 @if ($post->comments->count())
                                     <a href="/posts/{{ $post->id }}"><i class="fa-solid fa-comment"></i> {{$post->comments->count()}}</a>
                                 @else
-                                    <a><i class="fa-regular fa-comment"></i></a>
+                                    <a><i class="fa-regular fa-comment"></i> 0</a>
                                 @endif
                             </div>
                     
