@@ -13,7 +13,10 @@ class Donation extends Model
     
     protected $fillable = [
         'money',
-        'message'
+        'message',
+        'user_from_id',
+        'user_to_id'
+        
     ];
     
     public function user(){

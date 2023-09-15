@@ -1,28 +1,22 @@
 .sidebar {
     position: fixed;
     left: 0;
-    background-color: #dcdcdc;
+    background-color: #ffffff;
     width: 250px;
     height: 100%;
+}
+
+
+.sidebar_body {
+    border-right: 1px solid #000;
 }
 
 .header {
     text-align: center;
     line-height: 70px;
-    border-bottom: 1px solid #000;
-    border-top: 1px solid #000;
 }
 
 .sidebar ul a {
     padding-left: 20px;
-    line-height: 50px;
-}
-
-.sidebar ul {
-    border-bottom: 1px solid #000;
-}
-
-.followlist-header {
-    text-align: center;
     line-height: 50px;
 }
