@@ -9,11 +9,6 @@
         <script src="https://kit.fontawesome.com/401b404339.js" crossorigin="anonymous"></script>
     </head>
     <x-app-layout>
-        <x-slot name="header">
-        　  <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Lapis') }}
-        　  </h2>
-        </x-slot>
         <body>
             <div class="homebody">
                 <h1>LIVE REPORT</h1>
@@ -24,7 +19,11 @@
                                 <a href="/profile/shows/{{ $post->user->id }}">
                                     <img id="user_icon" src="{{ asset('storage/'.($post->user->profile_photo_path ?? 'user_icon.jpg')) }}" alt="">
                                 </a>
-                            <a href="/posts/{{ $post->id }}">{{ $post->user->name }}</a>
+                            @if( $post->user->account_type === 1)
+                            <a href="/posts/{{ $post->id }}">{{ $post->user->name }}.  <i class="fa-solid fa-music"></i></a>
+                            @else
+                            <a href="/posts/{{ $post->id }}">{{ $post->user->name }}.  <i class="fa-solid fa-headphones"></i></a>
+                            @endif
 　　　　　　　　　　        </div>
 　　　　　　　　　　        <div class="text-muted small mt-2">
                                 <a>投稿日 : <strong>{{$post->created_at->diffForHumans()}}</strong></a>

@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->integer('money');
             $table->string('message');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_from_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('user_to_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

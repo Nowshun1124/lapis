@@ -31,11 +31,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts/like/{id}', [PostController::class, 'like'])->name('post.like');
     Route::get('/posts/unlike/{id}', [PostController::class, 'unlike'])->name('post.unlike');
     Route::get('/profile/shows/{user}', [ProfileController::class, 'show'])->name('profile.show');
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::post('/profile', [ProfileController::class, 'select'])->name('account_type.select');
-    Route::get('/donations', [DonationController::class, 'show'])->name('donate.show');
-    Route::get('/donatios/done', [DonationController::class, 'donate'])->name('donate');
+    Route::get('/donations', [DonationController::class, 'index'])->name('donate.index');
+    Route::post('/donatios/done', [DonationController::class, 'donate'])->name('donate');
     Route::post('/users/{user}/follow', [FollowController::class, 'follow'])->name('follow');
     Route::delete('/users/{user}/unfollow', [FollowController::class, 'unfollow'])->name('unfollow');
     Route::delete('/posts/{post}', [PostController::class,'delete'])->name('delete');

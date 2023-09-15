@@ -25,9 +25,9 @@
                 </div>
                 <div class="profile_list">
                     @if( $user->account_type === 1)
-                    <a>{{ $user->name }} <i class="fa-solid fa-music"></i></a>
+                    <a>{{ $user->name }}.  <i class="fa-solid fa-music"></i></a>
                     @else
-                    <a>{{ $user->name }}</a>
+                    <a>{{ $user->name }}. <i class="fa-solid fa-headphones"></i></a>
                     @endif
                     
                     @if (Auth::user()->id != $user->id)
