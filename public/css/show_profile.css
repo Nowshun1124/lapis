@@ -181,3 +181,28 @@ audio {
 .d_box p {
     white-space: pre-wrap;
 }
+
+.p_header {
+    padding-top: 30px;
+}
+
+.p_header h1 {
+    font-size: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.postlist {
+    padding-top: 20px;
+    width: 600px;
+    border-bottom: solid 1px #cccccc;
+    margin: 0 auto;
+}
+
+.p_box {
+    width: 600px;
+    padding-bottom: 20px;
+}
+
+.p_box a {
+    white-space: pre-wrap;
+}

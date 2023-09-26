@@ -75,6 +75,7 @@
                     </div>
                 @endforeach
                 </div>
+                @if($user->account_type === 1)
                 <div class="d_header">
                     <h1>寄付金・メッセージ</h1>
                 </div>
@@ -86,8 +87,35 @@
                         </div>
                     @endforeach
                 </div>
+                @endif
+                <div class="p_header">
+                    <h1>投稿一覧</h1>
+                </div>
+                <div class="postlist">
+                    @foreach($user->posts as $post)
+                        <div class="p_box">
+                            <a href="/posts/{{ $post->id }}">{{ $post->body }}</a>
+                            @if(Auth::user()->id === $user->id)
+                            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <div class="btn"><button type="button" onclick="deletePost({{ $post->id }})">削除</button> </div>
+                            </form>
+                            @endif
+                        </div>    
+                    @endforeach
+                </div>
             </div>
         </div>
+        <script>
+        function deletePost(id) {
+        'use strict'
+
+        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+            document.getElementById(`form_${id}`).submit();
+        }
+        }
+        </script>
     </body>
     </x-app-layout>
 </html>

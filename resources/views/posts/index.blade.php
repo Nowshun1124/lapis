@@ -10,7 +10,6 @@
     </head>
     <x-app-layout>
         <body>
-            
             <div class="home">
                 <div class="right">
                     <form action="{{ route('index') }}" method="GET" class="search-form">

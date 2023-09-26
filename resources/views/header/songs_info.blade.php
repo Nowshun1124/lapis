@@ -34,6 +34,15 @@
                     <h1>概要欄</h1>
                     <p>{{ $song->explanation }}</p>
                 </div>
+                @if(Auth::user()->id === $song->user->id)
+                <div class="d_form">
+                    <form action="/songs/{{ $song->id }}" id="form_{{ $song->id }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                        <a><button type="button" onclick="deletePost({{ $song->id }})">楽曲を消去する</button></a>
+                    </form>
+                </div>    
+                @endif
             </div>
         </div>
         <div class="information">
@@ -46,6 +55,15 @@
                 </div>
             </div>            
         </div>
+        <script>
+        function deletePost(id) {
+        'use strict'
+
+        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+            document.getElementById(`form_${id}`).submit();
+        }
+        }
+        </script>
     </body>
     </x-app-layout>
 </html>

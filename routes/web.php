@@ -49,6 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/yt/upload', [ViewController::class, 'yt_index'])->name('yt_index');
     Route::delete('/users/{user}/unfollow', [FollowController::class, 'unfollow'])->name('unfollow');
     Route::delete('/posts/{post}', [PostController::class,'delete'])->name('delete');
+    Route::delete('/songs/{song}', [PostController::class,'s_delete'])->name('sons.delete');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
