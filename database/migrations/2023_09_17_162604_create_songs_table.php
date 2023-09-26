@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('songs', function (Blueprint $table) {
             $table->id();
+            $table->string('song_file_path');
             $table->string('title', 200)->nullable();
-            $table->string('body', 200);
-            $table->string('image_path', 100)->nullable();
+            $table->string('song_image_path', 100)->nullable();
+            $table->string('lyric', 2000)->nullable();
+            $table->string('explanation', 2000)->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('songs');
     }
 };

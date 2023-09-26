@@ -1,11 +1,183 @@
-.body {
-    padding-left: 250px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&display=swap');
+
+html body .profiles{
+   height: 100vh;
+   background: white;
 }
 
+.pro_header {
+    height: 300px;
+    background-image: url(header/header.jpeg);
+    background-position: 50% 40%;
+    background-size: cover;
+}
+
+.profile_photo {
+    float: left;
+    padding-left: 300px;
+    padding-top: 50px;
+}
+
+.user_info {
+    float: left;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.an {
+    font-size: 30px;
+    color: #f0f8ff;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+.follows a {
+    font-size: 15px;
+    color: #f0f8ff;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.postnm {
+    font-size: 15px;
+    color: #f0f8ff;
+    font-family: 'Noto Sans JP', sans-serif;
+    padding-top: 10px;
+}
+
+.profile_sentence {
+    float: left;
+    padding-left: 500px;
+    padding-top: 50px;
+}
+
+.profile_sentence p {
+    font-size: 15px;
+    color: #f0f8ff;
+}
+
+
+.users i {
+    color: #000000;
+}
+
+.follow {
+    float: left;
+    padding-left: 200px;
+    padding-top: 240px;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #ffffff;
+  background-color: #eb6100;
+  border-radius: 5px;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+
 #user_icon {
-    width:  150px;       /* ※縦横を同値に */
-    height: 150px;       /* ※縦横を同値に */
-    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-    background-position: center center;  
-    display: inline-block;          /* 複数の画像を横に並べたい場合 */
+    width:  170px;       /* ※縦横を同値に */
+    height: 170px;       /* ※縦横を同値に */
+    border-radius: 50%;/* 角丸半径を50%にする(=円形にする) */        /* 複数の画像を横に並べたい場合 */
+    object-fit: cover;
+}
+
+#jacket_photo {
+	height: 160px;
+	width: 160px;
+	object-fit: cover;
+}
+
+.pro_body {
+    width: 1500px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.list_header {
+    height: 60px;
+}
+
+.list_header h1 {
+    padding-top: 10px;
+    font-size: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.songs_list {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: solid 1px #cccccc;
+}
+
+.content_box {
+    box-sizing: border-box;
+    border:1px solid #ccc;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    padding: 20px;
+    width: 200px;
+    background-color: #202020;
+    
+}
+
+.title {
+    font-family: 'Noto Sans JP', sans-serif;
+   
+    color: white;
+}
+
+.artist {
+    padding-top: 10px;
+    color: #a0a0a0;
+    font-size: 2px;
+}
+
+.genrename a {
+    color: #a0a0a0;
+    font-size: 2px;
+}
+
+.tn {
+    margin-top: 5px;
+}
+
+.btn {
+    padding-top: 5px;
+}
+audio {
+    width: 160px;
+    height: 15px;
+}
+
+.d_header {
+    padding-top: 30px;
+}
+
+.d_header h1 {
+    font-size: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.donations {
+    padding-top: 20px;
+    border-bottom: solid 1px #cccccc;
+    display: flex;
+}
+
+.d_box {
+    width: 300px;
+    padding-bottom: 20px;
+}
+
+.d_box p {
+    white-space: pre-wrap;
 }

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Song;
 use Auth;
 
 class User extends Authenticatable
@@ -67,6 +68,11 @@ class User extends Authenticatable
         return $this->hasMany(Donation::class);
     }
     
+    public function songs()
+    {
+        return $this->hasMany(Song::class);
+    }
+    
     
  // フォロワー→フォロー
     public function followers()
@@ -104,8 +110,18 @@ class User extends Authenticatable
         return (boolean) $this->followers()->where('following_id', $user_id)->first(['id']);
     }
     
+    
+    //donation
+    public function donated() {
+        return $this->hasMany(Donation::class, 'user_to_id');
+    }
+    
     public function getOwnPaginateByLimit(int $limit_count = 5)
     {
         return $this::with('posts')->find(Auth::id())->posts()->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
+    
+    public function getByLimit(int $limit_count = 100){
+        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 }

@@ -1,20 +1,19 @@
-<link rel="stylesheet" href="{{ asset('/css/nav.css') }}">
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white" style="border-bottom: solid 1px #cccccc">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="header" >
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div>
                 <!-- Logo -->
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="padding-top: 20px">
+                    <x-nav-link :href="route('artist')" :active="request()->routeIs('artist')">
                         {{ __('アーティスト') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
+                    <x-nav-link :href="route('songs')" :active="request()->routeIs('songs')">
                         {{ __('楽曲') }}
                     </x-nav-link> 
-                    <x-nav-link :href="route('donate.index')" :active="request()->routeIs('create')">
+                    <x-nav-link :href="route('youtube')" :active="request()->routeIs('youtube')">
                         {{ __('Youtube') }}
                     </x-nav-link>  
                 </div>

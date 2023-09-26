@@ -1,9 +1,14 @@
 <link rel="stylesheet" href="{{ asset('/css/sidebar.css') }}">
+
+<input type="checkbox" id="check">
+<label for="check">
+    <i class="fa-solid fa-bars" id="ham"></i>
+    <i class="fa-solid fa-xmark" id="xmark"></i>
+</label>
 <div class="sidebar">
-    <div class="sidebar_body">
-        <header class="header">
-            Lapis
-        </header>
+    <header>
+        MENU
+    </header>
         <div class="list">
             <ul>
                 <li>
@@ -17,9 +22,14 @@
                     <li>
                         <a href="/profile/edit"><i class="fa-solid fa-user fa-lg"></i>　プロフィール</a>
                     </li>
+                    @if (Auth::user()->account_type === 1)
                     <li>
-                        <a href="/profile/edit"><i class="fa-solid fa-video fa-lg"></i>　動画</a>
+                        <a href="/mu/upload"><i class="fa-solid fa-compact-disc fa-lg"></i>　楽曲を投稿する</a>
                     </li>
+                    <li>
+                        <a href="yt/upload"><i class="fa-solid fa-video fa-lg"></i>　動画を投稿する</a>
+                    </li>
+                    @endif
                     <li>
                         <a href="/profile/edit"><i class="fa-solid fa-newspaper fa-lg"></i>　お知らせ</a>
                     </li>
@@ -27,6 +37,4 @@
                 </li>    
             </ul>
         </div>
-    </div>
-    
 </div>

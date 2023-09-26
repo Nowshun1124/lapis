@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Song;
 use App\Models\Follow;
+use App\Models\Donation;
 
 class ProfileController extends Controller
 {
@@ -24,9 +26,10 @@ class ProfileController extends Controller
         ]);
     }
     
-    public function show(User $user, Post $post)
+    public function show(User $user, Song $song, Donation $donation)
     {
-        return view('profile/show')->with(['user' => $user, 'post' => $post]);
+        // book_max_priceの合計値
+        return view('profile/show')->with(['user' => $user, 'songs' => $song->getByLimit(), 'donated' => $donation]);
     }
     /**
      * Update the user's profile information.

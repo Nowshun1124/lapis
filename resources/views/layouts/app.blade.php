@@ -15,9 +15,10 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-gray-100 flex flex-col h-screen">
+            <div class="sticky top-0">
             @include('layouts.navigation')
-            
+            </div>
             <!-- Page Heading -->
            
 
@@ -27,9 +28,7 @@
                     <div class="row">
                         @include('layouts.sidebar')
                     </div>
-                    <div class="row">
-                        @include('layouts.followlist')
-                    </div>
+
                 </div>
                 {{ $slot }}
                 

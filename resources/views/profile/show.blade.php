@@ -10,54 +10,83 @@
         <script src="https://kit.fontawesome.com/401b404339.js" crossorigin="anonymous"></script>
     </head>
     <x-app-layout>
-        <x-slot name="header">
-        　  <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
-        　  </h2>
-        </x-slot>
     <body>
-        <div class="body">
-            <div class='user-info'>
-                <div class="profile_photo">
-                    <a>
-                    <img id="user_icon" src="{{ asset('storage/'.($user->profile_photo_path ?? 'user_icon.jpg')) }}" alt="">
-                    </a>
-                </div>
-                <div class="profile_list">
+        
+        <div class='pro_header'>
+            <div class="profile_photo">
+                <a><img id="user_icon" src="{{ asset('storage/'.($user->profile_photo_path ?? 'user_icon.jpg')) }}" alt=""></a>
+            </div>
+            <div class="user_info">
+                <div class="users">
                     @if( $user->account_type === 1)
-                    <a>{{ $user->name }}.  <i class="fa-solid fa-music"></i></a>
+                    <a class="an">{{ $user->name }}.  <i class="fa-solid fa-music"></i></a>
                     @else
-                    <a>{{ $user->name }}. <i class="fa-solid fa-headphones"></i></a>
+                    <a class="an">{{ $user->name }}. <i class="fa-solid fa-headphones"></i></a>
                     @endif
-                    
-                    @if (Auth::user()->id != $user->id)
-                    @if (Auth::user()->isFollowing($user->id))
-                        <form action="{{ route('unfollow', ['user' => $user->id]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            
-                            <button type="submit" class="btn btn-danger">フォロー中</button>
-                        </form>
-                    @else
-                        <form action="{{ route('follow', ['user' => $user->id]) }}" method="POST">
-                            @csrf
-                            
-                            <button type="submit" class="btn btn-danger">フォローする</button>
-                        </form>
-                    @endif
-                    @endif
-                    <div class="follow_number">
+                    <p class="follows">
                         <a>フォロワー {{ $user->followers->count() }}人</a>
                         <a>フォロー中 {{ $user->follows->count() }}人</a>
-                    </div>
-                    <div class="posts_count">
-                        <a>投稿 {{ $user->posts->count() }}件</a>
-                    </div>
+                    </p>
+                    <p class="postnm">投稿 {{ $user->posts->count() }}件</p>
                 </div>
-                <div class="profile_sentence">
-                    <p>{{ old('introduction', $user->introduction )}}</p>
+            </div>
+            <div class="profile_sentence">
+                <p>{{ old('introduction', $user->introduction )}}</p>
+            </div>
+            <div class="follow">
+                @if (Auth::user()->id != $user->id)
+                @if (Auth::user()->isFollowing($user->id))
+                    <form action="{{ route('unfollow', ['user' => $user->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                            
+                        <a class="btn btn--orange"><button type="submit" class="btn btn-danger">フォロー中</button></a>
+                    </form>
+                @else
+                    <form action="{{ route('follow', ['user' => $user->id]) }}" method="POST">
+                        @csrf
+                        <a class="btn btn--orange"><button type="submit" class="btn btn-danger">フォローする</button></a>
+                    </form>
+                @endif
+                @endif
+            </div>
+        </div>
+        <div class="profiles">
+            <div class="pro_body">
+                <div class="list_header">
+                    <h1>楽曲リスト</h1>
                 </div>
-            </div>    
+                <div class="songs_list">
+                @foreach($user->songs as $song)
+                    <div class="content_box">
+                        <div class="music_con">
+                            <a href="/songs/info/{{ $song->id }}"><img id="jacket_photo" src="{{ asset('storage/'.($song->song_image_path)) }}" alt=""></a>
+                        </div>
+                        <div class="tn">
+                            <p class="title">{{ $song->title }}</p>
+                            <p class="artist">{{ $song->user->name }}</p>
+                        </div>
+                        <div class="btn">
+                            <audio controls id="songs" src="{{ asset('storage/'.($song->song_file_path)) }}"></audio>
+                        </div>
+                        <div class="genrename">
+                            <a href="">{{ $song->category->name }}</a>
+                        </div>    
+                    </div>
+                @endforeach
+                </div>
+                <div class="d_header">
+                    <h1>寄付金・メッセージ</h1>
+                </div>
+                <div class="donations">
+                    @foreach($user->donated as $donated)
+                        <div class="d_box">
+                            <p>¥ {{ $donated->money }}</p>
+                            <p>{{ $donated->message }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </body>
     </x-app-layout>
