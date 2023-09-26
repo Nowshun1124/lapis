@@ -77,12 +77,12 @@
         @csrf
         <div class="flex items-center gap-4">
             <input type="hidden" name="user_id" value="false">
-            @if ($user['account_type'] === 1 )
-                <p style="line-height:70px;">アーティストアカウントとして登録：<input id="account_type" checked="checked" name="user_id" type="checkbox" value="old('account_type', $user->account_type)"/></p>
-                @else
+            @if ($user['account_type'] === 0 )
                 <p style="line-height:70px;">アーティストアカウントとして登録：<input id="account_type" name="user_id" type="checkbox" value="old('account_type', $user->account_type)"/></p>
-            @endif
-            <x-primary-button>{{ __('適用') }}</x-primary-button>
+                <x-primary-button>{{ __('適用') }}</x-primary-button>
+            @else
+                <p>適用済み</p>
+            @endif    
         </div>　　
     </form> 
 </section>

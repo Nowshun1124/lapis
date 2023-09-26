@@ -32,7 +32,7 @@ class Song extends Model
         return $this->belongsTo(Category::class);
     }
     
-    public function getByLimit(int $limit_count = 10){
+    public function getByLimit(int $limit_count = 50){
         return $this::with(['user', 'category'])->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 }

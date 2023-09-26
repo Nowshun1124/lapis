@@ -73,6 +73,10 @@ class User extends Authenticatable
         return $this->hasMany(Song::class);
     }
     
+    public function socialAccounts()
+    {
+        return $this->hasMany(SocialAccount::class);
+    }
     
  // フォロワー→フォロー
     public function followers()
@@ -109,6 +113,7 @@ class User extends Authenticatable
     {
         return (boolean) $this->followers()->where('following_id', $user_id)->first(['id']);
     }
+    
     
     
     //donation

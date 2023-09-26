@@ -26,9 +26,6 @@
                     <li>
                         <a href="/mu/upload"><i class="fa-solid fa-compact-disc fa-lg"></i>　楽曲を投稿する</a>
                     </li>
-                    <li>
-                        <a href="yt/upload"><i class="fa-solid fa-video fa-lg"></i>　動画を投稿する</a>
-                    </li>
                     @endif
                     <li>
                         <a href="/profile/edit"><i class="fa-solid fa-newspaper fa-lg"></i>　お知らせ</a>

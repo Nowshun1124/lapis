@@ -7,15 +7,15 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="padding-top: 20px">
+                    <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
+                        {{ __('ホーム') }}
+                    </x-nav-link> 
                     <x-nav-link :href="route('artist')" :active="request()->routeIs('artist')">
                         {{ __('アーティスト') }}
                     </x-nav-link>
                     <x-nav-link :href="route('songs')" :active="request()->routeIs('songs')">
                         {{ __('楽曲') }}
                     </x-nav-link> 
-                    <x-nav-link :href="route('youtube')" :active="request()->routeIs('youtube')">
-                        {{ __('Youtube') }}
-                    </x-nav-link>  
                 </div>
                 
             </div>

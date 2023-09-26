@@ -25,7 +25,7 @@ class PostController extends Controller
             $query->where('body', 'LIKE', "%{$keyword}%");
         }
 
-        $posts = $query->get();
+        $posts = $query->latest()->get();
         
         return view('posts/index', compact('posts', 'keyword'));
     }
