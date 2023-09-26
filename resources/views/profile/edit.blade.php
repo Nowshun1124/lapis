@@ -1,3 +1,4 @@
+<script src="https://kit.fontawesome.com/401b404339.js" crossorigin="anonymous"></script>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">

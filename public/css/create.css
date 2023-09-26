@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&display=swap');
+
+html body .create {
+   height: 100vh;
+   background: white;
+}
+
+.create {
+    margin: 0 auto;
+}
+
+.createbody {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+
+.createheader {
+    background: #000000;
+    height: 60px;
+}
+
+.createheader h1 {
+    padding-top: 15px;
+    font-size: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+
+.title {
+    border-bottom: dotted 1px #cccccc;
+}
+
+.title p {
+    font-size: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+    padding-bottom: 20px;
+}
+
+.title input {
+    width: 500px;
+}
+
+.title_input {
+    padding-bottom: 20px;
+}
+
+#text1 {
+    border: 2px solid #ffd700 !important;
+    outline: 0;
+}
+
+#text2 {
+    border: 2px solid #ffd700 !important;
+    outline: 0;
+}
+
+#text1:focus {
+    box-shadow: 0 0 5px 0 rgba(255,153,0,1);
+    border: 2px solid #FFF !important;
+    outline: 0;
+}
+
+#text2:focus {
+    box-shadow: 0 0 5px 0 rgba(255,153,0,1);
+    border: 2px solid #FFF !important;
+    outline: 0;
+}
+
+.body {
+    border-bottom: dotted 1px #cccccc;
+}
+
+.body_p {
+    font-size: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.body2 {
+    padding-bottom: 20px;
+}
+
+.image {
+    border-bottom: dotted 1px #cccccc;
+}
+
+.image p {
+    font-size: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.image_file {
+    padding-bottom: 10px;
+}
+
+.image2 {
+    padding-bottom: 20px;
+}
+
+#post_image {
+    height: 200px;
+	width: 300px;
+	object-fit: cover;
+}
+
+.image img {
+    border: solid 3px #000000;
+}
+
+.btn {
+    display: flex;
+}
+
+.footer {
+    margin: 0 auto;
+    padding-top: 40px;
+    display: flex;
+}
+
+.btn-flat, .btn-flat2 {
+  overflow: hidden;
+  padding: 0.8rem 2rem;
+  color: #ffffff;
+  border-radius: 0;
+  background: #000000;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.btn-flat:hover {
+  background: #eb6877;
+}
+
+.btn-flat2:hover {
+  background: #eb6877;
+}
+
+.btn1 {
+    padding-right: 50px;
+}
+
+.btn2 {
+    padding-left: 50px;
+}

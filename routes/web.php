@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\FollowController;
+use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/donations', [DonationController::class, 'index'])->name('donate.index');
     Route::post('/donatios/done', [DonationController::class, 'donate'])->name('donate');
     Route::post('/users/{user}/follow', [FollowController::class, 'follow'])->name('follow');
+    Route::get('youtube/channels/{id}/titles', 'Api\YoutubeController@getListByChannelId');
+    Route::get('/mu/upload', [PostController::class, 'upload_index'])->name('upload.index');
+    Route::post('/mu/upload/up', [PostController::class, 'upload'])->name('upload');
+    Route::get('/songs', [ViewController::class, 'songs'])->name('songs');
+    Route::get('/songs/info/{song}', [ViewController::class, 'info'])->name('songs.info');
+    Route::get('/artist', [ViewController::class, 'artist'])->name('artist');
+    Route::get('/categories/{category}', [ViewController::class,'index']);
+    Route::get('/youtube', [ViewController::class, 'youtube'])->name('youtube');
+    Route::get('/yt/upload', [ViewController::class, 'yt_index'])->name('yt_index');
     Route::delete('/users/{user}/unfollow', [FollowController::class, 'unfollow'])->name('unfollow');
     Route::delete('/posts/{post}', [PostController::class,'delete'])->name('delete');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
