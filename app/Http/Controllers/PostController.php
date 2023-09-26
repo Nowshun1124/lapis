@@ -35,9 +35,20 @@ class PostController extends Controller
         return view('posts/create');
     }
 
-    public function show(Post $post){
+    public function show(Request $request, Post $post){
         //dd($post->user->profile_photo_path);
-        return view('posts/show')->with(['post' => $post]);
+        
+        $keyword = $request->input('keyword');
+        
+        $query = Post::query();
+
+        if(!empty($keyword)) {
+            $query->where('body', 'LIKE', "%{$keyword}%");
+        }
+
+        $posts = $query->latest()->get();
+        
+        return view('posts/show', compact('post', 'keyword'));
     }
 
     public function store(PostRequest $request, Post $post)
@@ -129,12 +140,18 @@ class PostController extends Controller
         ]);
         
         //dd($song);
-        return back();
+        return redirect('/songs/info/' . $song->id);
     }
     
     public function delete(Post $post)
     {
         $post->delete();
-        return redirect('/');
+        return redirect('/profile/shows/' . $post->user->id);
+    }
+    
+    public function s_delete(Song $song)
+    {
+        $song->delete();
+        return redirect('/profile/shows/' . $song->user->id);
     }
 }
