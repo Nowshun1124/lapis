@@ -19,7 +19,7 @@ class ViewController extends Controller
             $query->where('title', 'LIKE', "%{$keyword}%");
         }
 
-        $songs = $query->get();
+        $songs = $query->latest()->get();
         
         return view('header/songs', compact('songs', 'keyword'))->with(['categories' => $category->getByLimit()]);
 
@@ -40,7 +40,7 @@ class ViewController extends Controller
             $query->where('title', 'LIKE', "%{$keyword}%");
         }
 
-        $songs = $query->get();
+        $songs = $query->latest()->get();
         
         
         return view('header/genre', compact('songs', 'keyword'))->with(['songs' => $category->getByCategory(), 'categories' => $category->getByLimit()]);

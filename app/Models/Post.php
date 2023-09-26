@@ -48,6 +48,7 @@ class Post extends Model
             return false;
         }
     }
+    
     public function getByLimit(int $limit_count = 10){
         return $this::with('user')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
