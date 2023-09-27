@@ -151,12 +151,8 @@ a.btn--orange:hover {
 }
 
 .btn {
-    float: right;
-    font-size: 15px;
-    font-family: 'Noto Sans JP', sans-serif;
-    color:  #cccccc;
+    padding-top: 5px;
 }
-
 audio {
     width: 160px;
     height: 15px;
@@ -204,8 +200,7 @@ audio {
 
 .p_box {
     width: 600px;
-    padding-bottom: 60px;
-    border-bottom: solid 1px #cccccc;
+    padding-bottom: 20px;
 }
 
 .p_box a {
