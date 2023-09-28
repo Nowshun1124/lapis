@@ -33,7 +33,7 @@
                         <div class="content_box">
                             <div class="icon">
                                 <a href="/profile/shows/{{ $user->id }}">
-                                    <img id="user-icon" src="{{ asset('storage/'.($user->profile_photo_path)) }}" alt="">
+                                    <img id="user-icon" src="{{ $user->profile_photo_path }}" alt="">
                                 </a>
                             </div>    
                             <p>{{ $user->name }}</p>

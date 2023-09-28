@@ -14,7 +14,7 @@
         
         <div class='pro_header'>
             <div class="profile_photo">
-                <a><img id="user_icon" src="{{ asset('storage/'.($user->profile_photo_path ?? 'user_icon.jpg')) }}" alt=""></a>
+                <a><img id="user_icon" src="{{ $user->profile_photo_path }}" alt=""></a>
             </div>
             <div class="user_info">
                 <div class="users">
@@ -60,7 +60,7 @@
                 @foreach($user->songs as $song)
                     <div class="content_box">
                         <div class="music_con">
-                            <a href="/songs/info/{{ $song->id }}"><img id="jacket_photo" src="{{ asset('storage/'.($song->song_image_path)) }}" alt=""></a>
+                            <a href="/songs/info/{{ $song->id }}"><img id="jacket_photo" src="{{ $song->song_image_path }}" alt=""></a>
                         </div>
                         <div class="tn">
                             <p class="title">{{ $song->title }}</p>

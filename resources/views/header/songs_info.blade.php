@@ -14,14 +14,14 @@
         
         <div class='pro_header'>
             <div class="profile_photo">
-                <a><img id="jacket_photo" src="{{ asset('storage/'.($song->song_image_path)) }}" alt=""></a>
+                <a><img id="jacket_photo" src="{{ $song->song_image_path }}" alt=""></a>
             </div>
             <div class="user_info">
                 <div class="users">
                     <p class="ts">楽曲</p>
                     <p class="song_title">{{ $song->title }}</p>
                     <div class="com_info">
-                        <a><img id="user_icon" src="{{ asset('storage/'.($song->user->profile_photo_path ?? 'user_icon.jpg')) }}" alt=""></a>
+                        <a><img id="user_icon" src="{{ $song->user->profile_photo_path }}" alt=""></a>
                         <a href="/profile/shows/{{ $song->user->id }}" class="composer">{{ $song->user->name }}</a>
                     </div>
                 </div>

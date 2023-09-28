@@ -35,7 +35,7 @@
                         @forelse($songs as $song)
                         <div class="content_box">
                             <div class="music_con">
-                                <img id="jacket_photo" src="{{ asset('storage/'.($song->song_image_path)) }}" alt="">
+                                <img id="jacket_photo" src="{{ $song->song_image_path }}" alt="">
                             </div>
                             <div class="tn">
                                 <p class="title">{{ $song->title }}</p>

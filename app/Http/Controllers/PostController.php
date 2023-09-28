@@ -10,6 +10,7 @@ use App\Models\Follow;
 use App\Models\Song;
 use App\Models\Category;
 use App\Http\Requests\PostRequest;
+use Cloudinary;
 use Auth;
 
 
@@ -55,7 +56,7 @@ class PostController extends Controller
     {
         $photo_path = null;
         if ($request->hasFile('p_image')) {
-            $photo_path = $request->file('p_image')->store('post_image', 'public');
+            $photo_path = Cloudinary::upload($request->file('p_image')->getRealPath())->getSecurePath();
             $request->user()->posts->image_path = $photo_path;
         }
     
@@ -120,7 +121,7 @@ class PostController extends Controller
        
         $jacket_path = null;
         if ($request->hasFile('song_image')) {
-            $jacket_path = $request->file('song_image')->store('jacket_photo', 'public');
+            $jacket_path = Cloudinary::upload($request->file('song_image')->getRealPath())->getSecurePath();
             $request->user()->songs->song_image_path = $jacket_path;
         }
         

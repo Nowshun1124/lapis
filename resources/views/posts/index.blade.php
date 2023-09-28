@@ -50,7 +50,7 @@
                             <div class="post-header">
                                 <div class='user-info'>
                                     <a href="/profile/shows/{{ $post->user->id }}">
-                                        <img id="user_icon" src="{{ asset('storage/'.($post->user->profile_photo_path ?? 'user_icon.jpg')) }}" alt="">
+                                        <img id="user_icon" src="{{ $post->user->profile_photo_path }}" alt="">
                                     </a>
                                     @if( $post->user->account_type === 1)
                                     <a class="name" href="/posts/{{ $post->id }}">{{ $post->user->name }}.  <i class="fa-solid fa-music"></i></a>
@@ -63,7 +63,7 @@
                             <div class="postbody">
                                 <p>{{ $post->body }}</p>
                                 <div class="photo">
-                                    <img id="postimage" src="{{ asset('storage/'.($post->image_path)) }}" alt="">
+                                    <img id="postimage" src="{{ $post->image_path }}" alt="">
                                 </div>
                             </div>
                             <div class="likes_comment">
