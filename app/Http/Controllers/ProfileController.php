@@ -57,7 +57,8 @@ class ProfileController extends Controller
     public function select(Request $request)
     {
         //Auth::user()でログインしているユーザの$userインスタンスをとってきて、チェックボックスがtrueであればそのインスタンスのaccount_type変数にtrueを代入して、そのままsaveしたら良さそうですがいかがでしょうか？
-        Auth::user();
+        $input = $request["user_id"];
+        
         if($input = true)
         {
             $request->user()->account_type = true;

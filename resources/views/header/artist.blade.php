@@ -29,7 +29,7 @@
                     </div>
                     <div class="artist_list">
                         @forelse($users as $user)
-                        @if($user->account_type === 1)
+                        @if($user->account_type === true)
                         <div class="content_box">
                             <div class="icon">
                                 <a href="/profile/shows/{{ $user->id }}">

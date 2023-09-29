@@ -77,7 +77,7 @@
         @csrf
         <div class="flex items-center gap-4">
             <input type="hidden" name="user_id" value="false">
-            @if ( Auth::user()->account_type === 1 )
+            @if ( Auth::user()->account_type === true )
                 <p>適用済み</p>
             @else
                 <p style="line-height:70px;">アーティストアカウントとして登録：<input id="account_type" name="user_id" type="checkbox" value="old('account_type', $user->account_type)"/></p>

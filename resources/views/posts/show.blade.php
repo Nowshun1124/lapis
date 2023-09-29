@@ -54,7 +54,7 @@
                                     <a href="/profile/shows/{{ $post->user->id }}">
                                         <img id="user_icon" src="{{ $post->user->profile_photo_path ?? 'user_icon.jpg' }}" alt="">
                                     </a>
-                                    @if( $post->user->account_type === 1)
+                                    @if( $post->user->account_type === true)
                                     <a class="name" href="/posts/{{ $post->id }}">{{ $post->user->name }}.  <i class="fa-solid fa-music"></i></a>
                                     @else
                                     <a class="name" href="/posts/{{ $post->id }}">{{ $post->user->name }}.  <i class="fa-solid fa-headphones"></i></a>
@@ -105,7 +105,7 @@
                                     <a href="/profile/shows/{{ $comment->user->id }}">
                                         <img id="user_icon" src="{{ asset('storage/'.($comment->user->profile_photo_path ?? 'user_icon.jpg')) }}" alt="">
                                     </a>
-                                    @if( $post->user->account_type === 1)
+                                    @if( $post->user->account_type === true)
                                     <a class="name" href="/posts/{{ $comment->id }}">{{ $comment->user->name }}.  <i class="fa-solid fa-music"></i></a>
                                     @else
                                     <a class="name" href="/posts/{{ $comment->id }}">{{ $comment->user->name }}.  <i class="fa-solid fa-headphones"></i></a>

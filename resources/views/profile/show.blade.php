@@ -18,7 +18,7 @@
             </div>
             <div class="user_info">
                 <div class="users">
-                    @if( $user->account_type === 1)
+                    @if( $user->account_type === true)
                     <a class="an">{{ $user->name }}.  <i class="fa-solid fa-music"></i></a>
                     @else
                     <a class="an">{{ $user->name }}. <i class="fa-solid fa-headphones"></i></a>
