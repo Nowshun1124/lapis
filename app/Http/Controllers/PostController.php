@@ -52,7 +52,7 @@ class PostController extends Controller
         return view('posts/show', compact('post', 'keyword'));
     }
 
-    public function store(PostRequest $request, Post $post)
+    public function store(Request $request, Post $post)
     {
         $photo_path = null;
         if ($request->hasFile('p_image')) {
