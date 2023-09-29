@@ -22,7 +22,7 @@
                     <li>
                         <a href="/profile/edit"><i class="fa-solid fa-user fa-lg"></i>　プロフィール</a>
                     </li>
-                    @if (Auth::user()->account_type === 1)
+                    @if (Auth::user()->account_type === true)
                     <li>
                         <a href="/mu/upload"><i class="fa-solid fa-compact-disc fa-lg"></i>　楽曲を投稿する</a>
                     </li>
