@@ -75,7 +75,7 @@
                     </div>
                 @endforeach
                 </div>
-                @if($user->account_type === 1)
+                @if($user->account_type === true)
                 <div class="d_header">
                     <h1>寄付金・メッセージ</h1>
                 </div>
